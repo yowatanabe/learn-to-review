@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="801px" height="621px" viewBox="-0.5 -0.5 801 621">
+<defs/>
+<g>
+  <!-- インターネット -->
+  <ellipse cx="400" cy="40" rx="60" ry="30" fill="#e1f5ff" stroke="#01579b" stroke-width="2"/>
+  <text x="400" y="45" text-anchor="middle" font-size="14" font-family="Helvetica" fill="#01579b">インターネット</text>
+
+  <!-- VPC -->
+  <rect x="40" y="120" width="720" height="480" rx="9" ry="9" fill="none" stroke="#147eba" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="50" y="140" font-size="12" font-family="Helvetica" fill="#147eba">VPC (10.0.0.0/16)</text>
+
+  <!-- ALB -->
+  <rect x="300" y="160" width="200" height="60" rx="6" ry="6" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="400" y="185" text-anchor="middle" font-size="13" font-family="Helvetica" font-weight="bold" fill="#1976d2">ALB</text>
+  <text x="400" y="205" text-anchor="middle" font-size="10" font-family="Helvetica" fill="#333">Application Load Balancer</text>
+
+  <!-- パブリックサブネット1 -->
+  <rect x="80" y="260" width="300" height="180" rx="6" ry="6" fill="none" stroke="#82b366" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="90" y="280" font-size="11" font-family="Helvetica" fill="#82b366">パブリックサブネット1 (10.0.1.0/24)</text>
+  <text x="90" y="295" font-size="10" font-family="Helvetica" fill="#82b366">ap-northeast-1a</text>
+
+  <!-- EC2インスタンス1 -->
+  <rect x="110" y="320" width="240" height="100" rx="6" ry="6" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="230" y="345" text-anchor="middle" font-size="12" font-family="Helvetica" font-weight="bold" fill="#1976d2">EC2 (t3.medium)</text>
+  <text x="230" y="365" text-anchor="middle" font-size="10" font-family="Helvetica" fill="#333">Webサーバー (Nginx)</text>
+  <text x="230" y="385" text-anchor="middle" font-size="10" font-family="Helvetica" fill="#333">アプリケーション (Django)</text>
+
+  <!-- パブリックサブネット2 -->
+  <rect x="420" y="260" width="300" height="180" rx="6" ry="6" fill="none" stroke="#82b366" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="430" y="280" font-size="11" font-family="Helvetica" fill="#82b366">パブリックサブネット2 (10.0.2.0/24)</text>
+  <text x="430" y="295" font-size="10" font-family="Helvetica" fill="#82b366">ap-northeast-1c</text>
+
+  <!-- EC2インスタンス2 -->
+  <rect x="450" y="320" width="240" height="100" rx="6" ry="6" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="570" y="345" text-anchor="middle" font-size="12" font-family="Helvetica" font-weight="bold" fill="#1976d2">EC2 (t3.medium)</text>
+  <text x="570" y="365" text-anchor="middle" font-size="10" font-family="Helvetica" fill="#333">Webサーバー (Nginx)</text>
+  <text x="570" y="385" text-anchor="middle" font-size="10" font-family="Helvetica" fill="#333">アプリケーション (Django)</text>
+
+  <!-- RDS（パブリックサブネット内） -->
+  <rect x="280" y="480" width="240" height="100" rx="6" ry="6" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="400" y="505" text-anchor="middle" font-size="12" font-family="Helvetica" font-weight="bold" fill="#1976d2">RDS PostgreSQL 15</text>
+  <text x="400" y="525" text-anchor="middle" font-size="10" font-family="Helvetica" fill="#333">db.t3.medium (Single-AZ)</text>
+  <text x="400" y="545" text-anchor="middle" font-size="9" font-family="Helvetica" fill="#666">パブリックアクセス有効</text>
+  <text x="400" y="565" text-anchor="middle" font-size="9" font-family="Helvetica" fill="#666">SG: 0.0.0.0/0 → 5432</text>
+
+  <!-- 接続線 -->
+  <path d="M 400 70 L 400 160" fill="none" stroke="#666" stroke-width="2"/>
+  <path d="M 400 220 L 230 320" fill="none" stroke="#666" stroke-width="2"/>
+  <path d="M 400 220 L 570 320" fill="none" stroke="#666" stroke-width="2"/>
+  <path d="M 230 420 L 400 480" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="3 3"/>
+  <path d="M 570 420 L 400 480" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="3 3"/>
+</g>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720px" height="640px" viewBox="-0.5 -0.5 720 640">
+<defs/>
+<g>
+  <!-- インターネット -->
+  <ellipse cx="360" cy="35" rx="65" ry="28" fill="#e1f5ff" stroke="#01579b"/>
+  <text x="360" y="40" text-anchor="middle" font-size="13" fill="#01579b">インターネット</text>
+
+  <!-- WAF -->
+  <rect x="260" y="75" width="200" height="35" rx="6" ry="6"
+        fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
+  <text x="360" y="97" text-anchor="middle" font-size="11" font-weight="bold" fill="#388e3c">✓ AWS WAF (Managed Rules)</text>
+
+  <!-- VPC -->
+  <rect x="30" y="125" width="660" height="490" rx="9" ry="9"
+        fill="none" stroke="#147eba" stroke-dasharray="3 3"/>
+  <text x="40" y="145" font-size="11" fill="#147eba">VPC (10.0.0.0/16) - ap-northeast-1</text>
+
+  <!-- パブリックサブネット 1a -->
+  <rect x="50" y="160" width="300" height="170" rx="6" ry="6"
+        fill="none" stroke="#82b366" stroke-dasharray="3 3"/>
+  <text x="60" y="178" font-size="10" fill="#82b366">パブリックサブネット 1a</text>
+
+  <!-- パブリックサブネット 1c -->
+  <rect x="370" y="160" width="300" height="170" rx="6" ry="6"
+        fill="none" stroke="#82b366" stroke-dasharray="3 3"/>
+  <text x="380" y="178" font-size="10" fill="#82b366">パブリックサブネット 1c</text>
+
+  <!-- ALB (HTTPS) -->
+  <rect x="200" y="190" width="320" height="45" rx="6" ry="6"
+        fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
+  <text x="360" y="210" text-anchor="middle" font-size="11" font-weight="bold" fill="#388e3c">✓ ALB (HTTPS 443 + HTTP→HTTPS)</text>
+  <text x="360" y="226" text-anchor="middle" font-size="10" fill="#388e3c">SG: 0.0.0.0/0 → 443 のみ</text>
+
+  <!-- ECS Fargate タスク 1a -->
+  <rect x="80" y="255" width="240" height="60" rx="6" ry="6"
+        fill="#c8e6c9" stroke="#388e3c" stroke-width="1.5"/>
+  <text x="200" y="278" text-anchor="middle" font-size="11" font-weight="bold" fill="#388e3c">✓ ECS Fargate タスク</text>
+  <text x="200" y="295" text-anchor="middle" font-size="10" fill="#388e3c">Auto Scaling (min:2 max:10)</text>
+  <text x="200" y="308" text-anchor="middle" font-size="9" fill="#666">SG: ALB SGから → 8080</text>
+
+  <!-- ECS Fargate タスク 1c -->
+  <rect x="400" y="255" width="240" height="60" rx="6" ry="6"
+        fill="#c8e6c9" stroke="#388e3c" stroke-width="1.5"/>
+  <text x="520" y="278" text-anchor="middle" font-size="11" font-weight="bold" fill="#388e3c">✓ ECS Fargate タスク</text>
+  <text x="520" y="295" text-anchor="middle" font-size="10" fill="#388e3c">Auto Scaling (min:2 max:10)</text>
+  <text x="520" y="308" text-anchor="middle" font-size="9" fill="#666">SG: ALB SGから → 8080</text>
+
+  <!-- Secrets Manager -->
+  <rect x="500" y="345" width="170" height="35" rx="4" ry="4"
+        fill="#c8e6c9" stroke="#388e3c" stroke-width="1.5"/>
+  <text x="585" y="367" text-anchor="middle" font-size="10" font-weight="bold" fill="#388e3c">✓ Secrets Manager</text>
+
+  <!-- プライベートサブネット 1a -->
+  <rect x="50" y="395" width="300" height="200" rx="6" ry="6"
+        fill="none" stroke="#82b366" stroke-dasharray="3 3"/>
+  <text x="60" y="413" font-size="10" fill="#82b366">プライベートサブネット 1a</text>
+
+  <!-- プライベートサブネット 1c (新規) -->
+  <rect x="370" y="395" width="300" height="200" rx="6" ry="6"
+        fill="none" stroke="#388e3c" stroke-dasharray="3 3" stroke-width="2"/>
+  <text x="380" y="413" font-size="10" fill="#388e3c">✓ プライベートサブネット 1c (新規)</text>
+
+  <!-- RDS Primary -->
+  <rect x="80" y="430" width="240" height="70" rx="6" ry="6"
+        fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
+  <text x="200" y="455" text-anchor="middle" font-size="11" font-weight="bold" fill="#388e3c">✓ RDS Primary</text>
+  <text x="200" y="475" text-anchor="middle" font-size="10" fill="#388e3c">Multi-AZ / 暗号化有効</text>
+  <text x="200" y="490" text-anchor="middle" font-size="9" fill="#666">SG: ECS SGから → 5432</text>
+
+  <!-- RDS Standby -->
+  <rect x="400" y="430" width="240" height="70" rx="6" ry="6"
+        fill="#c8e6c9" stroke="#388e3c" stroke-width="2"/>
+  <text x="520" y="455" text-anchor="middle" font-size="11" font-weight="bold" fill="#388e3c">✓ RDS Standby</text>
+  <text x="520" y="475" text-anchor="middle" font-size="10" fill="#388e3c">自動フェイルオーバー</text>
+  <text x="520" y="490" text-anchor="middle" font-size="9" fill="#666">バックアップ7日保持 / PITR</text>
+
+  <!-- 同期レプリケーション -->
+  <path d="M 320 465 L 400 465" fill="none" stroke="#388e3c" stroke-width="2" stroke-dasharray="4 2"/>
+  <text x="360" y="458" text-anchor="middle" font-size="9" fill="#388e3c">同期</text>
+
+  <!-- 接続線 -->
+  <path d="M 360 63 L 360 75" fill="none" stroke="#666" stroke-width="1.5"/>
+  <path d="M 360 110 L 360 190" fill="none" stroke="#666" stroke-width="1.5"/>
+  <path d="M 300 235 L 200 255" fill="none" stroke="#666" stroke-width="1"/>
+  <path d="M 420 235 L 520 255" fill="none" stroke="#666" stroke-width="1"/>
+  <path d="M 200 315 L 200 430" fill="none" stroke="#666" stroke-width="1"/>
+  <path d="M 520 315 L 520 430" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="4 2"/>
+  <path d="M 520 315 L 585 345" fill="none" stroke="#388e3c" stroke-width="1" stroke-dasharray="4 2"/>
+</g>
+</svg>
